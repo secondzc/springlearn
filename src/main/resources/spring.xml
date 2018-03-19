@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!--<bean id="userBean" class="com.tongyuan.testSpring.UserBean">-->
+        <!--<property name="username" value="zcy" />-->
+    <!--</bean>-->
+
+    <bean id="userFactoryBean" class="com.tongyuan.testSpring.UserFactoryBean">
+    </bean>
+
+
+    <bean id="roomFactoryBean1" class="com.tongyuan.testSpring.RoomFactoryBean">
+    </bean>
+
+    <bean id="roomFactoryBean2" class="com.tongyuan.testSpring.RoomFactoryBean">
+    </bean>
+
+    <!-- 引入属性配置文件 -->
+    <bean class="com.tongyuan.util.PropertiesUtil">
+        <property name="locations">
+            <list>
+                <value>isoa.properties</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
