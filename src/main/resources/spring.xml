@@ -51,5 +51,24 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <bean class="com.tongyuan.aop.LogAspect"></bean>
 
+    <bean class="com.tongyuan.aop.PrivilegeAspect"></bean>
+    <!--<bean class="com.tongyuan.testAop.PrivilegeManager" id="manager1">-->
+        <!--<constructor-arg>-->
+            <!--<list>-->
+                <!--<value>insert</value>-->
+                <!--<value>admin</value>-->
+            <!--</list>-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
+    <bean class="com.tongyuan.testAop.PrivilegeManager" id="manager2">
+        <constructor-arg>
+            <list>
+                <value>update</value>
+                <value>insert</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="userService" class="com.tongyuan.service.UserService">
+    </bean>
 
 </beans>
