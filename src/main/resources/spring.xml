@@ -6,9 +6,10 @@
                         http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 http://www.lexueba.com/schema/user http://www.lexueba.com/schema/user.xsd">
 
-    <!--<bean id="userBean" class="com.tongyuan.testSpring.UserBean">-->
-        <!--<property name="username" value="zcy" />-->
-    <!--</bean>-->
+    <bean id="userBean" class="com.tongyuan.testSpring.UserBean">
+        <property name="username" value="zcy" />
+        <property name="email" value="777777"/>
+    </bean>
 
     <bean id="userFactoryBean" class="com.tongyuan.testSpring.UserFactoryBean">
     </bean>
@@ -30,4 +31,14 @@ http://www.lexueba.com/schema/user http://www.lexueba.com/schema/user.xsd">
     </bean>
 
     <myname:user id="testbean" username="zzz" email="bbb"/>
+
+    <bean class="com.tongyuan.testSpring.A" id="a">
+        <property name="b" ref="b"/>
+        <property name="name" value="this is a"/>
+    </bean>
+
+    <bean class="com.tongyuan.testSpring.B" id="b">
+        <property name="a" ref="a"/>
+        <property name="name" value="this is b"/>
+    </bean>
 </beans>

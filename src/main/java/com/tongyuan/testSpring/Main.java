@@ -20,8 +20,17 @@ public class Main {
 //        System.out.println(roomFactoryBean2);
 //        System.out.println(((UserBean)ctx.getBean("userFactoryBean")).getUsername());
 //        System.out.println(ctx.getBean("&userFactoryBean"));
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-        UserBean userBean = (UserBean) ctx.getBean("testbean");
-        System.out.println(userBean.getUsername() + "," + userBean.getEmail());
+
+//        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+//        UserBean userBean = (UserBean) ctx.getBean("testbean");
+//        System.out.println(userBean.getUsername() + "," + userBean.getEmail());
+
+        BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("spring.xml"));
+//        UserBean userBean = (UserBean) beanFactory.getBean("userBean");
+//        System.out.println(userBean.getUsername() + "," + userBean.getEmail());
+        A a = (A)beanFactory.getBean("a");
+        System.out.println("a de b de name = " + a.getB().getName());
+        System.out.println("a name = " + a.getName());
+        System.out.println("a de b = " + a.getB());
     }
 }
