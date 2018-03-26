@@ -5,6 +5,6 @@ package com.tongyuan.aop;
  */
 public class Calculator {
     public void add(Double a,Double b){
-        System.out.println(a+b);
+
     }
 }

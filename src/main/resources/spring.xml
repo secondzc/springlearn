@@ -10,7 +10,8 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <aop:aspectj-autoproxy/>
 
-    <bean id="userBean" class="com.tongyuan.testSpring.UserBean">
+    <!--可用于代替InitializingBean和DisposableBean接口-->
+    <bean id="userBean" class="com.tongyuan.testSpring.UserBean" init-method="init" destroy-method="cleanup">
         <property name="username" value="zcy" />
         <property name="email" value="777777"/>
     </bean>

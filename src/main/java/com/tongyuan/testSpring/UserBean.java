@@ -22,4 +22,12 @@ public class UserBean {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public void init(){
+        System.out.println("userBean init");
+    }
+    public void cleanup(){
+        System.out.println("userBean cleanup");
+    }
+
 }
